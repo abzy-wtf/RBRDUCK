@@ -23,6 +23,10 @@ Because this uses JanneMod V3 as its foundation, there are no required edits to 
 - [JanneMod V3](https://luppisrbr.blogspot.com/p/compatible-co-driver-mods-v3.html) *Scroll down a little bit*
 - [Python 3](https://www.python.org/downloads/)
 
+### Demonstration
+
+A YouTube video will be here.
+
 ## Quick Start Workflow
 
 1. **Prep:** Within your Richard Burns install folder, create a new folder called 'Tools'.
