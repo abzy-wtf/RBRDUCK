@@ -1,5 +1,5 @@
 Write-Host "==========================================" -ForegroundColor Cyan
-Write-Host "   RBRCDCK Environment Setup Script" -ForegroundColor Cyan
+Write-Host "   RBRDUCK Environment Setup Script" -ForegroundColor Cyan
 Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -15,12 +15,14 @@ Write-Host "Updating pip..." -ForegroundColor Yellow
 python -m pip install --upgrade pip --quiet
 
 $packages = @(
-    "numpy==1.24.1",
-    "openpyxl==3.1.2",
-    "pandas==2.0.0",
-    "scipy==1.14.1",
-    "sounddevice==0.5.1",
-    "soundfile==0.12.1"
+    "setuptools",
+    "wheel",
+    "numpy",
+    "openpyxl",
+    "pandas",
+    "scipy",
+    "sounddevice",
+    "soundfile"
 )
 
 Write-Host "`nInstalling required Python packages..." -ForegroundColor Yellow

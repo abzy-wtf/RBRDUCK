@@ -1,8 +1,7 @@
 $rootDir = (Get-Item $PSScriptRoot).Parent.FullName
 $jsonPath = Join-Path $rootDir "resources\stencil_matrix.json"
 $sourceNormalized = Join-Path $rootDir "audio_normalized"
-$buildPath = Join-Path $rootDir "build"
-$templatePath = Join-Path $rootDir "template"
+$buildPath = Join-Path $rootDir "template"
 
 if (-not (Test-Path $jsonPath)) {
     Write-Warning "Cannot find stencil_matrix.json in resources folder."
@@ -51,20 +50,28 @@ if ($choiceIndex -lt 0 -or $choiceIndex -ge $options.Count) {
 }
 
 $selectedEntry = $options[$choiceIndex]
-$targetFolder = $selectedEntry.TargetFolder
 $requiredFiles = $selectedEntry.Files
 
-if (Test-Path $templatePath) {
-    Copy-Item -Path "$templatePath\*" -Destination $buildPath -Recurse -Force
+Write-Host ""
+$customModName = Read-Host "Enter a name for your Mod (leave blank for: My Custom RBRDUCK Mod)"
+if ([string]::IsNullOrWhiteSpace($customModName)) {
+    $customModName = "My Custom RBRDUCK Mod"
 }
 
-$destSoundDir = Join-Path $buildPath "Plugins\Pacenote\sounds\$targetFolder"
+$destSoundDir = Join-Path $buildPath "Plugins\Pacenote\sounds\$customModName"
 if (-not (Test-Path $destSoundDir)) {
     New-Item -ItemType Directory -Path $destSoundDir -Force | Out-Null
 }
 
+$iniPath = Join-Path $buildPath "Plugins\Pacenote\PaceNote.ini"
+if (Test-Path $iniPath) {
+    $iniContent = Get-Content $iniPath
+    $iniContent = $iniContent -replace '^sounds=.*', "sounds=$customModName"
+    Set-Content -Path $iniPath -Value $iniContent
+}
+
 Write-Host ""
-Write-Host "Building $($selectedEntry.ScaleName) into $targetFolder..." -ForegroundColor Cyan
+Write-Host "Building $($selectedEntry.ScaleName) into $customModName..." -ForegroundColor Cyan
 
 $injectedCount = 0
 $missingCount = 0
@@ -127,6 +134,6 @@ Write-Host ""
 Write-Host "Build Complete!" -ForegroundColor Green
 Write-Host "  -> Successfully injected: $injectedCount files."
 Write-Host "  -> Missing/Unrecorded: $missingCount files."
-Write-Host "Your package is ready in the 'build' folder."
+Write-Host "Your package is ready in the 'template' folder."
 Write-Host "==========================================" -ForegroundColor Green
 Pause
