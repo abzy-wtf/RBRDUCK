@@ -40,7 +40,7 @@ A YouTube video will be here.
 
 ##### Why RBRDUCK?
 
-- With only 868 individual calls, it is now possible to create a voicepack covering all 42 cornering systems in a single evening.
+- With only 868 individual calls, it is now possible to create a voicepack covering all 42 cornering systems in a single evening, variants included.
 
 - Democratizes custom pacenote generation; the end-user does not need to know the underlying back-end to create a voicepack.
 
