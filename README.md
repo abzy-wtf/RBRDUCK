@@ -24,4 +24,5 @@ It goes without saying that JanneMod V3 is required for this tool to work, as it
 4. **Install Dependencies:** Run `scripts/01-Install-Requirements.ps1` to ensure your Python environment is ready.
 5. **Record:** Execute `scripts/02-recordAudio.py` and follow the prompts to record your pacenotes based on the provided Pacenote Script files. Run `scripts/03-normalizeAudio.py` to normalize your audio files.
 6. **Package:** Execute `scripts/04-Stencil-Distribute.ps1` to automatically package your audio into a JanneMod corner system framework.
-7. **Deploy:** Copy the generated framework into your RBR directory.
+7. **Inject:** Copy the JanneMod V3 config files into *\Tools\RBRDUCK\Plugins\Pacenote\config\\*.
+8. **Deploy:** Copy the generated framework into your RBR directory.
