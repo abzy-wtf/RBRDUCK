@@ -23,6 +23,7 @@ def main():
         os.makedirs(target_dir)
 
     files = glob.glob(os.path.join(source_dir, "*.ogg"))
+    files.extend(glob.glob(os.path.join(source_dir, "*.wav")))
     print(f"Found {len(files)} files to normalize.")
 
     for f in files:

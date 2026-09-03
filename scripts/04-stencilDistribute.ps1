@@ -2,6 +2,7 @@ $rootDir = (Get-Item $PSScriptRoot).Parent.FullName
 $jsonPath = Join-Path $rootDir "resources\stencil_matrix.json"
 $sourceNormalized = Join-Path $rootDir "audio_normalized"
 $buildPath = Join-Path $rootDir "build"
+$templatePath = Join-Path $rootDir "template"
 
 if (-not (Test-Path $jsonPath)) {
     Write-Warning "Cannot find stencil_matrix.json in resources folder."
@@ -12,7 +13,7 @@ if (-not (Test-Path $jsonPath)) {
 $matrix = Get-Content $jsonPath -Raw | ConvertFrom-Json
 
 Write-Host "==========================================" -ForegroundColor Cyan
-Write-Host "   RBRCDCK - Interactive Stencil Wizard" -ForegroundColor Cyan
+Write-Host "   RBRDUCK - Interactive Stencil Wizard" -ForegroundColor Cyan
 Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Select a scale category:"
@@ -53,6 +54,10 @@ $selectedEntry = $options[$choiceIndex]
 $targetFolder = $selectedEntry.TargetFolder
 $requiredFiles = $selectedEntry.Files
 
+if (Test-Path $templatePath) {
+    Copy-Item -Path "$templatePath\*" -Destination $buildPath -Recurse -Force
+}
+
 $destSoundDir = Join-Path $buildPath "Plugins\Pacenote\sounds\$targetFolder"
 if (-not (Test-Path $destSoundDir)) {
     New-Item -ItemType Directory -Path $destSoundDir -Force | Out-Null
@@ -66,9 +71,10 @@ $missingCount = 0
 
 foreach ($reqFile in $requiredFiles) {
     $baseName = [System.IO.Path]::GetFileNameWithoutExtension($reqFile)
+    $ext = [System.IO.Path]::GetExtension($reqFile)
     $baseNameStripped = $baseName -replace '[1-9]$', ''
     
-    $sourceFile = Join-Path $sourceNormalized "$baseNameStripped.ogg"
+    $sourceFile = Join-Path $sourceNormalized "$baseNameStripped$ext"
     
     if (Test-Path $sourceFile) {
         $destFile = Join-Path $destSoundDir $reqFile

@@ -91,7 +91,8 @@ def main():
         # Just in case they add (Speak:) tags back in the future
         filename = line.split(' (Speak:')[0].strip()
         
-        output_file = os.path.join(rec_path, f"{filename}.ogg")
+        ext = ".wav" if filename.lower() == "go" else ".ogg"
+        output_file = os.path.join(rec_path, f"{filename}{ext}")
         
         # Skip if already recorded (helps if user takes a break and restarts the script)
         if os.path.exists(output_file):
