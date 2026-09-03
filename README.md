@@ -27,6 +27,6 @@ You can find it here: https://luppisrbr.blogspot.com/p/compatible-co-driver-mods
 5. **Record:** Execute `scripts/02-recordAudio.py` and follow the prompts to record your pacenotes based on the provided Pacenote Script files. Run `scripts/03-normalizeAudio.py` to normalize your audio files.
 6. **Package:** Execute `scripts/04-stencilDistribute.ps1` to automatically package your audio into a JanneMod corner system framework.
 7. **Inject:** Copy the JanneMod V3 config files (`pacenote` and `ranges` folders) into *\Tools\RBRDUCK\template\Plugins\Pacenote\config\\*.
-8. **Deploy:** Copy the generated framework into your RBR directory.
+8. **Deploy:** Copy the generated framework into your RBR directory (`Audio` and `Plugins` folders).
 
 With only 868 individual calls, it is now possible to create a voicepack covering all 42 cornering systems in a single evening.
