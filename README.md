@@ -1,3 +1,5 @@
+<img width="3840" height="2160" alt="image" src="https://github.com/user-attachments/assets/d41c2db3-8c5b-4f61-9306-17818854602c" />
+
 ## RBR co-Driver Universal Creation Kit
 
 The Richard Burns Rally co-Driver Universal Creation Kit (RBRDUCK) is an SDK-like tool that allows an end-user or mod creator to quickly and conveniently record their own custom co-driver mod calls for Richard Burns Rally in a Luppis/JanneMod V3 framework.
