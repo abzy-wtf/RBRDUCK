@@ -1,6 +1,6 @@
-Write-Host "==========================================" -ForegroundColor Cyan
+Write-Host "=======================================" -ForegroundColor Cyan
 Write-Host "   RBRDUCK Environment Setup Script" -ForegroundColor Cyan
-Write-Host "==========================================" -ForegroundColor Cyan
+Write-Host "=======================================" -ForegroundColor Cyan
 Write-Host ""
 
 # Check for Python
@@ -31,8 +31,8 @@ foreach ($pkg in $packages) {
     python -m pip install $pkg --quiet
 }
 
-Write-Host "`n==========================================" -ForegroundColor Green
+Write-Host "`n==============================================" -ForegroundColor Green
 Write-Host "   All requirements successfully installed!" -ForegroundColor Green
-Write-Host "==========================================" -ForegroundColor Green
+Write-Host "==============================================" -ForegroundColor Green
 Write-Host ""
 Pause

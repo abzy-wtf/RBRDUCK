@@ -15,6 +15,7 @@ This tool was inspired by and uses re-worked components of Wrench's ['Co-Driver 
 Because this uses JanneMod V3 as its foundation, there are no required edits to .ini files. Furthermore, this mod is designed to work with existing JanneMod V3 installations. So long as your game directory uses JanneMod V3, you can use this tool to create your own custom co-driver calls.
 
 ### Requirements
+
 - [JanneMod V3](https://luppisrbr.blogspot.com/p/compatible-co-driver-mods-v3.html) *Scroll down a little bit*
 - [Python 3](https://www.python.org/downloads/)
 
@@ -26,7 +27,15 @@ Because this uses JanneMod V3 as its foundation, there are no required edits to 
 4. **Install:** Run `scripts/01-installRequirements.ps1` to ensure your Python environment is ready.
 5. **Record:** Execute `scripts/02-recordAudio.py` and follow the prompts to record your pacenotes based on the provided Pacenote Script files. Run `scripts/03-normalizeAudio.py` to normalize your audio files.
 6. **Package:** Execute `scripts/04-stencilDistribute.ps1` to automatically package your audio into a JanneMod corner system framework.
-7. **Inject:** Copy the JanneMod V3 config files (`pacenote` and `ranges` folders) into *\Tools\RBRDUCK\template\Plugins\Pacenote\config\\*.
+7. **Inject:** Copy the desired JanneMod V3 config files (`pacenote` and `ranges` folders) into *\Tools\RBRDUCK\template\Plugins\Pacenote\config\\*.
 8. **Deploy:** Copy the generated framework into your RBR directory (`Audio` and `Plugins` folders).
 
-With only 868 individual calls, it is now possible to create a voicepack covering all 42 cornering systems in a single evening.
+##### Why RBRDUCK?
+
+- With only 868 individual calls, it is now possible to create a voicepack covering all 42 cornering systems in a single evening.
+
+- Democratizes custom pacenote generation; the end-user does not need to know the underlying back-end to create a voicepack.
+
+- If you are multilingual or a non-native English speaker, this is the easiest way to record pacenotes in your native tongue.
+
+- Because Janne took the time to develop an awesome framework.
