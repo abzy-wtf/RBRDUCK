@@ -2,4 +2,8 @@
 *.jpg
 /scripts/bonus
 /scripts/resources
-
+/audio_raw
+/audio_normalized
+/resources/matrices
+*.ogg
+template/Plugins/Pacenote/PaceNote.ini

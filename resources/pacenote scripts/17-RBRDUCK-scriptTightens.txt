@@ -66,3 +66,8 @@ tightens_two
 tightens_two_plus
 tightens_verylong
 tightens_veryverylong
+tightens_ten
+tightens_eleven
+tightens_twelve
+tightens_thirteen
+tightens_fourteen
