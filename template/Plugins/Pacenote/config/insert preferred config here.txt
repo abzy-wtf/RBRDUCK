@@ -1,0 +1,5 @@
+RBRDUCK DOES NOT CONTAIN CONFIG .INIS!
+JanneMod V3 config .inis must be present! Very important!
+Within your RBR root directory, navigate to Plugins/Pacenote/config.
+Copy the *'pacenote'* and *'ranges'* folders and paste them here.
+This maintains the proper mapping logic for the audio.
