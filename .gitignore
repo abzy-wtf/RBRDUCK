@@ -2,8 +2,10 @@
 *.jpg
 /scripts/bonus
 /scripts/resources
+/scripts/06-buildEmpiricalMatrix.py
 /audio_raw
 /audio_normalized
 /resources/matrices
 *.ogg
 
+resources/pacenote scripts/zz0test.txt
