@@ -85,6 +85,45 @@ foreach ($reqFile in $requiredFiles) {
     }
 }
 
+Write-Host ""
+Write-Host "Copying auxiliary audio files (Speech\Broken, Speech\Number, Audio\Game)..." -ForegroundColor Cyan
+
+$extraMappings = @{
+    "batterys_flat.ogg" = "Audio\Speech\Broken\eng\batterys_flat.ogg"
+    "problem_engine.ogg" = "Audio\Speech\Broken\eng\problem_engine.ogg"
+    "steering_broke.ogg" = "Audio\Speech\Broken\eng\steering_broke.ogg"
+    "sus_broke.ogg" = "Audio\Speech\Broken\eng\sus_broke.ogg"
+    "water_temp.ogg" = "Audio\Speech\Broken\eng\water_temp.ogg"
+    "weve_got_fire.ogg" = "Audio\Speech\Broken\eng\weve_got_fire.ogg"
+    "wv_lost_brakes.ogg" = "Audio\Speech\Broken\eng\wv_lost_brakes.ogg"
+    "start1.ogg" = "Audio\Speech\Number\start1.ogg"
+    "start2.ogg" = "Audio\Speech\Number\start2.ogg"
+    "start3.ogg" = "Audio\Speech\Number\start3.ogg"
+    "Go.wav" = "Audio\Game\Go.wav"
+}
+
+foreach ($key in $extraMappings.Keys) {
+    $base = [System.IO.Path]::GetFileNameWithoutExtension($key)
+    $srcWav = Join-Path $sourceNormalized "$base.wav"
+    $srcOgg = Join-Path $sourceNormalized "$base.ogg"
+    
+    $srcToUse = $null
+    $destExt = ".ogg"
+    if (Test-Path $srcWav) { $srcToUse = $srcWav; $destExt = ".wav" }
+    elseif (Test-Path $srcOgg) { $srcToUse = $srcOgg; $destExt = ".ogg" }
+
+    if ($srcToUse) {
+        $destPath = Join-Path $buildPath ($extraMappings[$key] -replace '\.ogg$', $destExt)
+        $destDir = Split-Path $destPath -Parent
+        if (-not (Test-Path $destDir)) { New-Item -ItemType Directory -Path $destDir -Force | Out-Null }
+        Copy-Item -Path $srcToUse -Destination $destPath -Force
+        $injectedCount++
+    } else {
+        $missingCount++
+    }
+}
+
+Write-Host ""
 Write-Host "Build Complete!" -ForegroundColor Green
 Write-Host "  -> Successfully injected: $injectedCount files."
 Write-Host "  -> Missing/Unrecorded: $missingCount files."

@@ -88,10 +88,10 @@ def main():
         if not line or line.startswith('-') or line.startswith('['):
             continue
             
-        # Just in case they add (Speak:) tags back in the future
+        # Catch (Speak:) tags
         filename = line.split(' (Speak:')[0].strip()
         
-        ext = ".wav" if filename.lower() == "go" else ".ogg"
+        ext = ".wav" if filename == "Go" else ".ogg"
         output_file = os.path.join(rec_path, f"{filename}{ext}")
         
         # Skip if already recorded (helps if user takes a break and restarts the script)

@@ -892,7 +892,7 @@ tightens_two_plus
 tightens_verylong
 tightens_veryverylong
 
---- [ AUDIO ] ---
+--- [ OTHER AUDIO ] ---
 batterys_flat
 gearbox_broke
 problem_engine
@@ -901,3 +901,7 @@ sus_broke
 water_temp
 weve_got_fire
 wv_lost_brakes
+start1
+start2
+start3
+Go

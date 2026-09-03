@@ -1,0 +1,11 @@
+batterys_flat
+problem_engine
+steering_broke
+sus_broke
+water_temp
+weve_got_fire
+wv_lost_brakes
+start1 (Speak: "One")
+start2 (Speak: "Two")
+start3 (Speak: "Three")
+Go
