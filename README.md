@@ -23,9 +23,9 @@ You can find it here: https://luppisrbr.blogspot.com/p/compatible-co-driver-mods
 1. **Prep:** Within your Richard Burns install folder, create a new folder called 'Tools'.
 2. **Download:** Download the latest release of RBRDUCK from the [releases page](https://github.com/abzy-wtf/RBRDUCK/releases) to the newly-created Tools folder.
 3. **Extract:** Extract the contents of the downloaded release by right-clicking and choosing *'Extract to RBRDUCK\'*. You should now have *\Tools\RBRDUCK\\* within your RBR directory.
-4. **Install:** Run `scripts/01-Install-Requirements.ps1` to ensure your Python environment is ready.
+4. **Install:** Run `scripts/01-installRequirements.ps1` to ensure your Python environment is ready.
 5. **Record:** Execute `scripts/02-recordAudio.py` and follow the prompts to record your pacenotes based on the provided Pacenote Script files. Run `scripts/03-normalizeAudio.py` to normalize your audio files.
-6. **Package:** Execute `scripts/04-Stencil-Distribute.ps1` to automatically package your audio into a JanneMod corner system framework.
+6. **Package:** Execute `scripts/04-stencilDistribute.ps1` to automatically package your audio into a JanneMod corner system framework.
 7. **Inject:** Copy the JanneMod V3 config files into *\Tools\RBRDUCK\template\Plugins\Pacenote\config\\*.
 8. **Deploy:** Copy the generated framework into your RBR directory.
 
