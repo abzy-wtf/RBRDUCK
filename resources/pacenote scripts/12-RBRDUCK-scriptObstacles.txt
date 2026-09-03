@@ -1,0 +1,17 @@
+bridge_bump
+ford
+grid
+narrow_bridge
+narrow_gate
+onto_bridge
+onto_narrow_bridge
+over_bridge
+over_narrow_bridge
+over_rails
+over_rocks
+puddle
+snow
+snow_border
+through_gate
+through_narrow_gate
+tunnel

@@ -1,0 +1,10 @@
+again
+exit_lap
+finish
+first_exit
+immediate
+onto_nextlap
+second_exit
+sudden
+third_exit
+tofinish
