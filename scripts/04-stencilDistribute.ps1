@@ -76,15 +76,25 @@ Write-Host "Building $($selectedEntry.ScaleName) into $customModName..." -Foregr
 $injectedCount = 0
 $missingCount = 0
 
+$uniqueBases = @{}
 foreach ($reqFile in $requiredFiles) {
     $baseName = [System.IO.Path]::GetFileNameWithoutExtension($reqFile)
     $ext = [System.IO.Path]::GetExtension($reqFile)
     $baseNameStripped = $baseName -replace '[1-9]$', ''
-    
+    $uniqueBases[$baseNameStripped] = $ext
+}
+
+foreach ($baseNameStripped in $uniqueBases.Keys) {
+    $ext = $uniqueBases[$baseNameStripped]
     $sourceFile = Join-Path $sourceNormalized "$baseNameStripped$ext"
     
     if (Test-Path $sourceFile) {
-        $destFile = Join-Path $destSoundDir $reqFile
+        $slot = 1
+        $destFile = Join-Path $destSoundDir "$baseNameStripped$slot$ext"
+        while (Test-Path $destFile) {
+            $slot++
+            $destFile = Join-Path $destSoundDir "$baseNameStripped$slot$ext"
+        }
         Copy-Item -Path $sourceFile -Destination $destFile -Force
         $injectedCount++
     } else {
