@@ -25,7 +25,7 @@ Because this uses JanneMod V3 as its foundation, there are no required edits to 
 
 ### Demonstration
 
-A YouTube video will be here.
+[A YouTube video will be here.](https://youtu.be/y9_WzIm7PN4)
 
 ## Quick Start Workflow
 
